@@ -1,0 +1,13 @@
+%%bigquery --project [date] secondary
+SELECT
+  COUNT(description) AS Count,
+  ROUND(COUNT(description) / SUM(COUNT(*)) OVER () * 100,2) AS Percent,
+  description
+FROM `bigquery-public-data.chicago_crime.crime`
+WHERE
+  domestic = true AND
+  arrest = true AND
+  EXTRACT(YEAR FROM date) = 2020
+GROUP BY description
+ORDER BY Percent DESC
+LIMIT 5;
