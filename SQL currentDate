@@ -1,4 +1,4 @@
-%%bigquery --project [date] currentDate
+%%bigquery --project [name] currentDate
 SELECT
   EXTRACT(YEAR FROM date) AS Year,
   EXTRACT(MONTH FROM date) AS Month,
