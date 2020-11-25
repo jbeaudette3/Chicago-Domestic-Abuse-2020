@@ -80,6 +80,9 @@ ax.set_facecolor('xkcd:purple')
 
 size = 17
 
+ax.xaxis.set_visible(False)
+ax.yaxis.set_visible(False)
+
 ax.text(0.25, 0.9, 'Top Domestic Abuse Types', fontsize=20, color='white', fontweight='bold', horizontalalignment='left')
 ax.text(0.25, 0.85, 'in Chicago 2020', fontsize=20, color='white', fontweight='bold', horizontalalignment='left')
 
