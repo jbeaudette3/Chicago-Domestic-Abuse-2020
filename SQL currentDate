@@ -1,0 +1,11 @@
+%%bigquery --project [date] currentDate
+SELECT
+  EXTRACT(YEAR FROM date) AS Year,
+  EXTRACT(MONTH FROM date) AS Month,
+  EXTRACT(DAY FROM date) AS Day,
+FROM `bigquery-public-data.chicago_crime.crime`
+WHERE
+  EXTRACT (YEAR FROM date) >= 2020
+  AND Domestic = True
+ORDER BY date DESC
+LIMIT 1
