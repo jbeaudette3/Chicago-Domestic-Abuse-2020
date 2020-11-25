@@ -1,4 +1,4 @@
-%%bigquery --project [date] secondary
+%%bigquery --project [name] secondary
 SELECT
   COUNT(description) AS Count,
   ROUND(COUNT(description) / SUM(COUNT(*)) OVER () * 100,2) AS Percent,
